@@ -8,6 +8,14 @@
         <servlet-name>servletControlLogueo</servlet-name>
         <servlet-class>controller.servletControlLogueo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InterfaceRegion</servlet-name>
+        <servlet-class>pe.edu.upeu.rrhh.interfaces.InterfaceRegion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegionControl</servlet-name>
+        <servlet-class>pe.edu.upeu.rrhh.controlador.RegionControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>servletControlLogin</servlet-name>
         <url-pattern>/servletControlLogin</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>servletControlLogueo</servlet-name>
         <url-pattern>/servletControlLogueo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InterfaceRegion</servlet-name>
+        <url-pattern>/InterfaceRegion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegionControl</servlet-name>
+        <url-pattern>/reg</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
