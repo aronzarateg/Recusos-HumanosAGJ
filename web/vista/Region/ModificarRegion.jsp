@@ -9,7 +9,7 @@
 <jsp:useBean id="list2" scope="session" class="java.util.ArrayList"/>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%@include file="../../WEB-INF/jspf/jcssspratodos.jspf" %>
