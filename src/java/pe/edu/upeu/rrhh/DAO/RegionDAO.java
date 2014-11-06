@@ -46,21 +46,82 @@ public class RegionDAO implements InterfaceRegion{
 
     @Override
     public List<RegionModelo> list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.conn = FactoryConnectionDB.open(FactoryConnectionDB.MYSQL);
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * FROM region WHERE idREGION=").append(id);
+        List<RegionModelo> list = new ArrayList<RegionModelo>();
+        try {
+            ResultSet rs = this.conn.query(sql.toString());
+            while(rs.next()){
+            RegionModelo us = new RegionModelo();
+            us.setIdregion(rs.getInt("idREGION"));
+            us.setNombreregion(rs.getString("Nombre_Region"));
+           
+            list.add(us);
+            }
+        } catch (SQLException e) {
+        } finally{
+            this.conn.close();
+        }
+        return list;
     }
 
     @Override
     public boolean edit(RegionModelo regionMod) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         this.conn = FactoryConnectionDB.open(FactoryConnectionDB.MYSQL);
+        boolean save = false;
+        try {
+            StringBuilder sql = new StringBuilder();
+            sql.append("UPDATE region SET idREGION = ").append(regionMod.getIdregion());
+            
+            sql.append(", Nombre_Region = '").append(regionMod.getNombreregion()).append("' WHERE idREGION = ").append(regionMod.getIdregion());
+            this.conn.execute(sql.toString());
+            save = true;
+            //System.out.println(departamento.getDpto());
+        } catch (Exception e) {
+        }finally{
+            this.conn.close();
+        }
+//        System.out.println(departamento.getIddpto());
+//        System.out.println(departamento.getDpto());
+//        System.out.println(departamento.getCostos());
+//        System.out.println(departamento.getStatus());
+        return save;
     }
 
     @Override
     public boolean save(RegionModelo regionMod) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         this.conn = FactoryConnectionDB.open(FactoryConnectionDB.MYSQL);
+        boolean save = false;
+        try {
+//            System.out.println(departamentp.getId()+", "+departamentp.getProv()+", "+departamentp.getDir()+", "+departamentp.getRuc()+", "+departamentp.getTel()+", "+departamentp.getEst());
+                StringBuilder sql = new StringBuilder();
+                sql.append("INSERT INTO region(idREGION,Nombre_Region) VALUES(").append("NULL");
+                
+                sql.append(", '").append(regionMod.getNombreregion()).append("')");
+                //String sql1 = "INSERT INTO Proveedor(iddepartamentp)VALUES(10)";
+                this.conn.execute(sql.toString());
+                save = true;
+        } catch (Exception e) {
+            this.conn.close();
+        }        
+        return save;
     }
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.conn = FactoryConnectionDB.open(FactoryConnectionDB.MYSQL);
+        boolean delete = false;
+        try {
+            StringBuilder sql = new StringBuilder();
+            sql.append("DELETE FROM region WHERE idREGION = ").append(id);
+            this.conn.execute(sql.toString());
+            delete = true;
+        } catch (Exception e) {
+            
+        }finally{
+            this.conn.close();
+        }
+        return delete;
     }
 }

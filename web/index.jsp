@@ -69,9 +69,9 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                         <li><a href="about-us.html">Acerca de Nosotros</a></li>
-                        <li><a href="services.html">Servicios</a></li>
-                        
-                        <li><a href="vista/BusquedaTrabajos.html">Ofertas de Trabajos</a></li>
+                         <li><a href="FormatMantRegion.jsp">Mantenimiento</a></li>
+                        <li><a href="#">Ofertas de Trabajos</a></li>
+                       
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accesos <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">

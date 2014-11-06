@@ -68,9 +68,9 @@ public class RegionControl extends HttpServlet {
                     session.setAttribute("list2", aO.list(id));
                     dispatcher = getServletContext().getRequestDispatcher(pagina);
                     dispatcher.forward(request, response);
-            case 4: pagina = "/reg?op=1";
+            case 4: pagina = "/region?op=1";
                     regi.setIdregion(Integer.parseInt(request.getParameter("id")));
-                    regi.setNombreregion(request.getParameter("nombres"));
+                    regi.setNombreregion(request.getParameter("region"));
                     
                     if(aO.edit(regi)){
                     dispatcher = getServletContext().getRequestDispatcher(pagina);
@@ -78,8 +78,8 @@ public class RegionControl extends HttpServlet {
                     }else{
                         out.println("<h3>Error al modificar registro..!!</h3>");
                     }
-            case 5: pagina = "/reg?op=1";
-                    regi.setNombreregion(request.getParameter("nombre"));
+            case 5: pagina = "/region?op=1";
+                    regi.setNombreregion(request.getParameter("region"));
                   
                     if(aO.save(regi)){
                     dispatcher = getServletContext().getRequestDispatcher(pagina);
@@ -87,7 +87,7 @@ public class RegionControl extends HttpServlet {
                     }else{
                         out.println("<h3>Error AL guardar registro..!!</h3>");
                     }
-            case 6: pagina = "/reg?op=1";
+            case 6: pagina = "/region?op=1";
                     id = Integer.parseInt(request.getParameter("id"));
                     if(aO.delete(id)){
                     dispatcher = getServletContext().getRequestDispatcher(pagina);
