@@ -6,7 +6,7 @@
         <div class="menu">
             <a href="index" class="btn btn-mini btn-primary" role="button">Inicio</a>
             <a href="region?op=1" class="btn btn-mini btn-primary" role="button">Region</a>
-            
+            <a href="perfil?op=1" class="btn btn-mini btn-primary" role="button">Perfil</a>
         </div>
     </div>
 
